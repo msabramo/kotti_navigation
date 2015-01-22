@@ -20,10 +20,10 @@ def get_children(context, request):
 
     if show_hidden and user:
         children = [c for c in context.children_with_permission(request)
-                    if c.__class__ not in ex_cts]
+                    if c.__class__.__name__ not in ex_cts]
     else:
         children = [c for c in context.children_with_permission(request)
-                    if c.in_navigation and c.__class__ not in ex_cts]
+                    if c.in_navigation and c.__class__.__name__ not in ex_cts]
 
     return children
 
@@ -37,10 +37,10 @@ def get_lineage(context, request):
 
     if show_hidden and user:
         items = [item for item in list(lineage(context))
-                 if item.__class__ not in ex_cts]
+                 if item.__class__.__name__ not in ex_cts]
     else:
         items = [item for item in list(lineage(context))
-                 if item.in_navigation and item.__class__ not in ex_cts]
+                 if item.in_navigation and item.__class__.__name__ not in ex_cts]
 
     return items
 
