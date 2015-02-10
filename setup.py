@@ -34,6 +34,7 @@ setup(name='kotti_navigation',
       url='http://pypi.python.org/pypi/kotti_navigation',
       license='BSD-derived (http://www.repoze.org/LICENSE.txt)',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+      package_data ={'kotti_navigation': ['templates/*.pt']},
       include_package_data=True,
       zip_safe=False,
       install_requires=[
