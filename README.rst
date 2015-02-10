@@ -12,7 +12,9 @@ Setting up Navigation
 =====================
 
 To activate kotti_navigation add the following entry, as with any add-on, to
-kotti.configurators of your .ini config file::
+kotti.configurators of your .ini config file:
+
+.. code-block:: ini
 
     kotti.configurators =
         ...
@@ -71,7 +73,9 @@ Here are the location choices in a layout diagram::
 Each of these locations can be separately configured, allowing a site to have
 only one navigation display, the typical case, or to have several nav displays
 for specialized applications. The display type and other options for a given
-location are configured with lines like these::
+location are configured with lines like these:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_display_type = ver_pills_stacked
     kotti_navigation.navigation_widget.left_label = none
@@ -171,7 +175,9 @@ You can configure navigation in all six locations at the same time if you want,
 but usually one or two will do fine!
 
 For each location, these configuration settings are available, given the
-restrictions on display type described above::
+restrictions on display type described above:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_display_type = ver_pills_stacked
     kotti_navigation.navigation_widget.left_show_menu = false
@@ -202,7 +208,9 @@ right slot. The images-only nav display could be given a label such as
 "Images:" for clarity.  The include_content_types setting is separate from the
 Kotti general content property ``in_navigation``, a boolean associated with the
 "Show/Hide" toggle available for individual content items in the Contents menu.
-Entries for include_content_types need the full path::
+Entries for include_content_types need the full path:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.include_content_types = 
         kotti.resources.Image
@@ -257,7 +265,9 @@ Cats.
 The optional label at the top of a dislay of this type would usually be
 omitted, because the nature of the indentation should make the context
 apparent. In some situations, however, a simple label such as "Site Navigation"
-or "Site Menu" could be desired. To set such a label, do::
+or "Site Menu" could be desired. To set such a label, do:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = Site Menu
 
@@ -270,14 +280,18 @@ clarity, or for some special reason, you may want to include the current
 context in the label, in a phrase such as "Current item: context", where the
 word ``context`` would be replaced by the actual context.title, e.g.  "Current
 item: Cats". To do this, include the actual word ``context`` in the label
-text::
+text:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = <context>
 
 (the label would become ${'<' + context.title '>'} in the template code, which
 would become ``<Animals>`` in the rendered label.)
 
-Or, to provide a breadcrumbs-style label, do::
+Or, to provide a breadcrumbs-style label, do:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = You are here: context
 
@@ -301,7 +315,9 @@ For the "Animals" context, if label is not set, there will be two nav items::
     
 (< > notation used here to denote nav li items).
 
-Using a label, punctuated with a colon, we might have::
+Using a label, punctuated with a colon, we might have:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = Contained Items:
 
@@ -309,14 +325,18 @@ This would result in a nav-header styled label with two li items, as::
 
     Contained items: <Dogs> <Cats>
 
-or, perhaps some other punctuation could be used instead of a colon::
+or, perhaps some other punctuation could be used instead of a colon:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = Contents >>
 
 etc.
 
 As described above, use the word ``context`` anywhere in the label text as a
-placeholder for context.title. Used alone::
+placeholder for context.title. Used alone:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = context
 
@@ -324,7 +344,9 @@ the result would be a label for Animals and two nav li items::
 
     Animals <Dogs> <Cats>
 
-Again, punctuation or additional text may help, as with::
+Again, punctuation or additional text may help, as with:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = context:
 
@@ -333,7 +355,9 @@ which becomes::
     Animals: <Dogs> <Cats>
 
 If a phrase is used, take care to word appropriately, perhaps aided by use of
-an additional indication for context, such as (), [], etc.::
+an additional indication for context, such as (), [], etc.:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = Items in [context] are::
 
@@ -341,7 +365,9 @@ which would result in::
 
     Items in [Animals] are: <Dogs> <Cats>
 
-and::
+and:
+
+.. code-block:: ini
 
     kotti_navigation.navigation_widget.left_label = "context" contains:
 
