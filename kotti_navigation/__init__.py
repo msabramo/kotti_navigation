@@ -58,7 +58,7 @@ def kotti_configure(settings):
 def include_view(config):
 
     config.add_translation_dirs('kotti_navigation:locale')
-    config.scan(__name__)
+    config.scan(__name__, ignore='.tests')
 
 
 def include_navigation_widget(config, where='left'):  # pragma: no cover
